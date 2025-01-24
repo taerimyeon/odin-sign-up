@@ -1,7 +1,8 @@
 :root {
-  --color-primary: #000AAA;
+  --color-primary: #596D48;
   --color-secondary: #000DDD;
   --color-accent: #000FFF;
+  --color-white: #FFFFFF;
   --height-viewport-full: 100vh;
   --height-viewport-three-quarter: 75vh;
   --height-viewport-half: 50vh;
@@ -21,20 +22,48 @@ body {
   height: var(--height-viewport-full);
 }
 
-.side-hero {
+.side-container {
   position: relative;
   width: var(--width-side);
   font-size: 0.8rem;
 }
 
-.side-hero .side-credit {
+.side-container .side-title {
   position: absolute;
+  z-index: 1;
+  top: 0.8rem;
+  margin: 0;
+  width: var(--width-side);
+  text-align: center;
+  font-size: 4rem;
+  color: var(--color-white);
+}
+
+.side-container img {
+  display: block;
+  position: absolute;
+  z-index: 0;
+  height: var(--height-viewport-full);
+  width: auto;
+}
+
+.side-container .side-credit {
+  position: absolute;
+  z-index: 1;
   bottom: 0;
   width: var(--width-side);
   text-align: center;
+  color: var(--color-white);
+}
+
+.side-credit a {
+  color: var(--color-white);
 }
 
 .form-container {
+  position: relative;
+  z-index: 2;
+  background-color: var(--color-white);
   width: var(--width-form);
   font-size: 1.2rem;
 }
