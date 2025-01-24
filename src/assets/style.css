@@ -1,8 +1,11 @@
 :root {
   --color-primary: #596D48;
-  --color-secondary: #000DDD;
-  --color-accent: #000FFF;
+  --color-primary-400: #B9D188;
+  --color-primary-700: #8AA461;
+  --color-secondary: #463D53;
+  --color-accent: #C195FF;
   --color-white: #FFFFFF;
+  --color-input-border: #CED0D5;
   --height-viewport-full: 100vh;
   --height-viewport-three-quarter: 75vh;
   --height-viewport-half: 50vh;
@@ -31,7 +34,7 @@ body {
 .side-container .side-title {
   position: absolute;
   z-index: 1;
-  top: 0.8rem;
+  top: 3rem;
   margin: 0;
   width: var(--width-side);
   text-align: center;
@@ -74,22 +77,80 @@ body {
 }
 
 .form-header {
-  height: calc(var(--height-viewport-three-quarter) / 2);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: calc(calc(var(--height-viewport-three-quarter) / 2) - 6rem);
+  padding: 3rem 6rem;
+  font-weight: 600;
 }
 
 .form-body {
   height: var(--height-viewport-quarter);
+  padding: 0 6rem;
 }
 
-.form-pairs {
+form {
   display: flex;
-  gap: 2rem;
+  flex-direction: column;
+  gap: 0.6rem;
 }
 
 form label {
   display: block;
+  font-size: 0.9rem;
+}
+
+form input {
+  appearance: none;
+  padding: 0.4rem;
+  height: 2rem;
+  width: 100%;
+  border-radius: 0.3rem;
+  border: 1px solid var(--color-input-border);
+  box-sizing: border-box;
+}
+
+.form-pairs {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-field {
+  width: 22rem;
 }
 
 .form-action {
-  height: calc(var(--height-viewport-three-quarter) / 2);
+  height: calc(calc(var(--height-viewport-three-quarter) / 2) - 6rem);
+  padding: 3rem 6rem;
+}
+
+.form-action p {
+  font-size: 1rem;
+}
+
+.form-action a {
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.form-action button {
+  height: 3rem;
+  width: 12rem;
+  background-color: var(--color-primary);
+  border: none;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  color: var(--color-white);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.form-action button:hover {
+  background-color: var(--color-primary-400);
+}
+
+.form-action button:active {
+  background-color: var(--color-primary-700);
 }
